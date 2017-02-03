@@ -1,0 +1,87 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.lm__breadcrums {
+	margin: 0 auto;
+	width: 960px;
+	background: #f9f7f5;
+	position: relative;
+	padding: 30px 15px 60px 15px;
+}
+
+h2, h3 {
+	line-height: 2;
+	text-align: center;
+}
+
+.lm__form-progress {
+	display: block;
+	text-align: center;
+	position: absolute;
+	bottom: -30px;
+	left: 0;
+	width: 100%;
+}
+
+.lm__form-progress.done .line {
+	width: 100%;
+}
+
+.lm__form-progress:before {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #ccc;
+	bottom: 29px;
+	left: 0;
+	z-index: -1;
+}
+
+.lm__form-progress li {
+	display: inline-block;
+	margin: 0 15px;
+}
+
+.lm__form-progress li a {
+	display: block;
+	padding: 10px;
+	width: 40px;
+	height: 40px;
+	font-size: 32px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #999;
+	background: white;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	position: relative;
+}
+
+.lm__form-progress li.done a {
+	background: #64ad29;
+	color: white;
+	border-color: #64ad29;
+}
+
+.lm__form-progress li.active a {
+	color: #64ad29;
+	border-color: #64ad29;
+	border-width: 2px;
+}
+
+.line {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 0;
+	height: 2px;
+	background: #64ad29;
+	bottom: 28px;
+	left: 0;
+	z-index: -1;
+}

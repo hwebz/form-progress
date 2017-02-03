@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For Progress</title>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+	<div class="lm__breadcrums">
+		<h2>Steg 2</h2>
+		<h3>Profil och behorighet</h3>
+        <ul class="lm__form-progress">
+        	<span class="line"></span>
+            <li class="done"><a href="#">1</a></li>
+            <li class="done"><a href="#">2</a></li>
+            <li class="active"><a href="#">3</a></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+    	$(document).ready(function() {
+    		var step = $(".lm__form-progress li");
+    		var activeStep = $(".lm__form-progress li.active");
+    		var activeLine = $(".line");
+    		var endPoint = activeStep.offset().left - ($(window).width() - $(".lm__breadcrums").width())/2 + step.width()/2;
+    		activeLine.css({width: endPoint});
+
+    		step.find("a").click(function() {
+    			var parentList = $(this).parent();
+    			var endPoint2 = parentList.offset().left - ($(window).width() - $(".lm__breadcrums").width())/2 + step.width()/2;
+    			activeLine.css({width: endPoint2});
+    			step.removeClass("active");
+    			parentList.attr("class", "active");
+
+    			for (var i = 0; i < step.index(parentList); i++) {
+    				step[i].className = "done";
+    			}
+    		});
+    	});
+    </script>
+</body>
+</html>
